@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "templar-fraud-lab"
+version = "0.1.0"
+description = "Independent implementation of a routed, verifier-grounded, calibrated and cost-sensitive fraud decision pipeline with synthetic demo data and a paper fidelity audit"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Md Sultanul Arefin Sourav" }]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "catboost>=1.2",
+  "torch>=2.1",
+  "matplotlib>=3.7",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+templar-fraud-lab = "templar_fraud_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]

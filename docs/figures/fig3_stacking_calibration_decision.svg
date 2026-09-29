@@ -1,0 +1,43 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1190' height='300' viewBox='0 0 1190 300'>
+<defs><marker id='arrow' markerWidth='8' markerHeight='8' refX='7' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='#1F2A37'/></marker></defs>
+<rect width='1190' height='300' fill='white'/>
+<text x='16' y='24' font-family='Helvetica, Arial, sans-serif' font-size='14' font-weight='bold' fill='#1F2A37'>Figure 3 (adapted): stacking, calibration and cost-sensitive decision</text>
+<rect x='30' y='40' width='150' height='48' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='105.0' y='60.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>p_triage</text>
+<text x='105.0' y='76.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>always present</text>
+<rect x='30' y='110' width='150' height='48' rx='8' fill='#F7F7F5' stroke='#B4531F' stroke-width='1.5'/>
+<text x='105.0' y='130.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>p_escalation</text>
+<text x='105.0' y='146.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>optional, verified only</text>
+<rect x='30' y='180' width='150' height='48' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='105.0' y='200.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>p_z</text>
+<text x='105.0' y='216.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>encoder head</text>
+<rect x='260' y='100' width='200' height='68' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='360.0' y='130.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Bayesian stacking</text>
+<text x='360.0' y='146.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>Dirichlet(1) prior, weights renormalised over available sources</text>
+<rect x='520' y='100' width='190' height='68' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='615.0' y='130.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>1-D OT calibration</text>
+<text x='615.0' y='146.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>quantile matching, K knots, min support</text>
+<rect x='770' y='100' width='190' height='68' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='865.0' y='130.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Cost threshold t*</text>
+<text x='865.0' y='146.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>argmin C_FP FP + C_FN FN + C_R R</text>
+<rect x='1020' y='40' width='140' height='48' rx='8' fill='#F9E9E3' stroke='#B4531F' stroke-width='1.5'/>
+<text x='1090.0' y='60.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>fraud</text>
+<text x='1090.0' y='76.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>p >= t*</text>
+<rect x='1020' y='110' width='140' height='48' rx='8' fill='#E8F3EA' stroke='#2F7D4F' stroke-width='1.5'/>
+<text x='1090.0' y='130.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>legitimate</text>
+<text x='1090.0' y='146.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>p < t*</text>
+<rect x='1020' y='180' width='140' height='48' rx='8' fill='#F7F7F5' stroke='#1F2A37' stroke-width='1.5'/>
+<text x='1090.0' y='200.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>review</text>
+<text x='1090.0' y='216.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>verifier fail or high disagreement</text>
+<line x1='180' y1='64' x2='260' y2='120' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='180' y1='134' x2='260' y2='134' stroke='#B4531F' stroke-width='1.4' marker-end='url(#arrow)'/><text x='220.0' y='128.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='9' fill='#B4531F'>mask</text>
+<line x1='180' y1='204' x2='260' y2='148' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='460' y1='134' x2='520' y2='134' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/><text x='490.0' y='128.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='9' fill='#1F2A37'>p_stacked, u</text>
+<line x1='710' y1='134' x2='770' y2='134' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/><text x='740.0' y='128.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='9' fill='#1F2A37'>p_calibrated</text>
+<line x1='960' y1='124' x2='1020' y2='64' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='960' y1='134' x2='1020' y2='134' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='960' y1='144' x2='1020' y2='204' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<text x='30' y='262' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>Stacking weights and the calibration map are fitted on the validation split; the threshold grid is [0.001, 0.500] step 0.001 with lowest-threshold tie-break.</text>
+<text x='30' y='279' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>Missing p_escalation is a mask, never a zero; the disagreement proxy is the availability-weighted spread of the sources.</text>
+<text x='16' y='290' font-family='Helvetica, Arial, sans-serif' font-size='8' fill='#555'>Original drawing adapted from the structure of the source article's figure (Discover Data 4:20, 2026, CC BY 4.0). Redrawn by tools/render_figures.py.</text>
+</svg>

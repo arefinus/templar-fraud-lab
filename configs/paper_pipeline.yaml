@@ -1,0 +1,63 @@
+# Settings taken from the source paper for the non-neural stages (evidence: paper-reported).
+# Recorded for fidelity; the demo uses configs/demo.yaml. Where the paper is ambiguous the
+# ambiguity id from docs/paper-implementation-audit.md is given.
+evidence_status: paper-reported
+source: "Discover Data 4:20 (2026), DOI 10.1007/s44248-026-00117-y"
+split:
+  fractions: [0.70, 0.15, 0.15]
+  late_slice_fraction: 0.10       # same-dataset chronological slice; overlap with test is A01
+  validation: forward-chaining 5-fold
+preprocessing:
+  numeric_imputation: median (train fold only)
+  missing_category: explicit token
+  low_cardinality: one-hot
+  high_cardinality: frequency encoding (D1); frequency plus smoothed target encoding (D2)
+  scaler: RobustScaler (train only)
+  temporal_d1: [month_index, day_of_week]        # BAF has month only: A02
+  temporal_d2: [hour, day_of_week, time_since_last_card_event]
+  smote: false
+triage_catboost:
+  iterations: 4000
+  boosting: ordered
+  depth: 6
+  learning_rate: 0.03
+  l2_leaf_reg: 5
+  random_strength: 0.30
+  bagging_temperature: 0.50
+  positive_class_weight: legit_to_fraud_ratio_per_training_fold
+routing:                                  # A04: Eq. 5 and Section 2.7 disagree
+  eq5: "fast if p_triage < gamma_low and u_i < T_u, else escalation"
+  band_thresholds:
+    d1_baf: {low: 0.18, high: 0.72}
+    d2_ieee_cis: {low: 0.16, high: 0.74}
+    minimum_separation: 0.20
+templates:
+  bank_size_k: 64
+  discovery_corpus_rows: 50000
+  mcts_simulations_per_expansion: 100
+  predicate_depth_max: 3
+  conjunctive_terms_max: 3
+  operators: [numeric_comparison, categorical_comparison, arithmetic, conjunction, aggregates, scalar_constants]
+  reward: forward-chaining validation AUC-PR
+verifier:
+  checks: [schema, feature_support, range, predicate_consistency]
+  parameters: none
+stacking:
+  weights: non-negative, sum to one over available sources
+  sources: [p_triage, p_escalation_verifier_approved_only, p_z]
+  prior: Dirichlet(1, ..., 1)
+  variational_lr: 0.01
+  iterations: 3000
+  mc_samples: 32
+  patience_on_val_nll: 200
+calibration:                              # A03 (sample count), A08 (construction)
+  method: one-dimensional optimal transport map on validation
+  quantile_knots: 256
+  interpolation: monotone piecewise-linear
+  min_observations_per_interval: 200
+  stated_fit_rows: 100000
+decision:                                  # A10: cost units and values not stated
+  objective: "argmin C_FP*FP + C_FN*FN + C_R*R"
+  grid: {low: 0.001, high: 0.500, step: 0.001}
+  selected_threshold: {d1_baf: 0.034, d2_ieee_cis: 0.033}
+seeds: [11, 23, 37, 53, 79]

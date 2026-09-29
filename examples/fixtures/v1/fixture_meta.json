@@ -1,0 +1,24 @@
+{
+  "version": "v1",
+  "generator": "tools/make_fixture.py",
+  "seed": 42,
+  "rows": 6000,
+  "fraud_rows": 122,
+  "prevalence": 0.02033,
+  "sha256": "c0a35940c9359d74793e3c98af15dc9b20050b516e364c9edcef4487b0f006df",
+  "columns": [
+    "row_id",
+    "event_time",
+    "ts",
+    "card_id",
+    "amount",
+    "merchant_category",
+    "device_type",
+    "country_match",
+    "account_age_days",
+    "velocity_1h",
+    "email_domain",
+    "ip_risk_score",
+    "is_fraud"
+  ]
+}

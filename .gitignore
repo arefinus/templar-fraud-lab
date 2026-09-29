@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.smoke_output/
+.scratch/
+catboost_info/
+examples/output/models/
+examples/output/metrics_evaluate.json
+.venv/
+.DS_Store
+runs/
+.smoke_output/
+.scratch/

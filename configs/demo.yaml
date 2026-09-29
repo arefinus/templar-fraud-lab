@@ -1,0 +1,69 @@
+# Demo configuration: small dimensions so `make demo` finishes in about a minute on CPU.
+# Nothing here is a paper setting; paper settings live in paper_saint.yaml and paper_pipeline.yaml.
+mode: demo
+seed: 42
+fixture_dir: examples/fixtures/v1
+output_dir: examples/output
+max_rows: null
+
+split:
+  fractions: [0.70, 0.15, 0.15]
+  late_fraction: 0.10
+
+preprocess:
+  te_smoothing: 20.0
+
+saint:
+  token_dim: 16
+  out_dim: 16
+  n_blocks: 2
+  n_heads: 2
+  ff_mult: 2
+  dropout: 0.10
+  context: 256
+  epochs: 8
+  lr: 0.001
+  weight_decay: 0.00001
+  gamma: 2.0
+  patience: 3
+  loss: weighted_bce
+
+triage:
+  iterations: 400
+  depth: 2
+  learning_rate: 0.03
+  l2_leaf_reg: 5.0
+  random_strength: 0.30
+  bagging_temperature: 0.50
+
+routing:
+  rule: eq5            # eq5 | band  (see docs/paper-implementation-audit.md, A04)
+  gamma_low: 0.18
+  gamma_high: 0.72
+  t_u: 0.25
+  uncertainty: rank_disagreement   # rank_disagreement | disagreement | margin
+
+templates:
+  bank: demo
+  mcts:
+    enabled: true
+    simulations: 24
+    n_templates: 3
+    max_conjuncts: 3
+    n_folds: 3
+    quantiles: [0.5, 0.8, 0.95]
+
+stacking:
+  lr: 0.01
+  iterations: 600
+  mc_samples: 32
+  patience: 100
+
+calibration:
+  n_knots: 32
+  min_support: 20
+  ece_bins: 10
+
+decision:
+  costs_file: configs/demo_costs.yaml
+  review_uncertainty: 0.35

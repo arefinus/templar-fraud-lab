@@ -1,0 +1,62 @@
+{
+  "evidence_status": "paper-reported",
+  "note": "Values transcribed from the source article. They were NOT produced by this repository and are never used as a test oracle. Units for savings are not stated in the paper.",
+  "source": {
+    "title": "TEMPLAR fraud a verifier grounded calibrated and cost sensitive framework for transaction fraud detection",
+    "venue": "Discover Data",
+    "volume": "4",
+    "article": "20",
+    "year": 2026,
+    "doi": "https://doi.org/10.1007/s44248-026-00117-y",
+    "upstream_code_cited_by_paper": "https://github.com/raihandinaribn/templar-fraud",
+    "upstream_code_status": "not audited and not reused in this repository"
+  },
+  "datasets": {
+    "D1": {"dataset_id": "baf-base", "name": "Bank Account Fraud (BAF) Base", "rows": 1000000, "fraud_rows": 10290, "prevalence": 0.01029, "raw_features": 30, "span": "8 months", "source_locator": "Table 1"},
+    "D2": {"dataset_id": "ieee-cis", "name": "IEEE-CIS Fraud Detection", "rows": 590540, "fraud_rows": 20663, "prevalence": 0.03499, "features": 434, "span": "about 6 months", "source_locator": "Table 1"}
+  },
+  "protocol": {
+    "protocol_id": "chrono-70-15-15-mean-of-5-seeds",
+    "split": "chronological 70/15/15",
+    "late_slice": "final 10% chronological slice of the same dataset",
+    "seeds": [11, 23, 37, 53, 79],
+    "aggregation": "mean over seeds"
+  },
+  "metrics": [
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auroc", "value": 0.918, "source_locator": "Table 3", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auc_pr", "value": 0.498, "source_locator": "Table 3", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "f1", "value": 0.557, "source_locator": "Table 3", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "precision", "value": 0.608, "source_locator": "Table 3", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "recall", "value": 0.514, "source_locator": "Table 3", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "specificity", "value": 0.997, "source_locator": "Table 3", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auroc", "value": 0.972, "source_locator": "Table 4", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auc_pr", "value": 0.701, "source_locator": "Table 4", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "f1", "value": 0.747, "source_locator": "Table 4", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "precision", "value": 0.776, "source_locator": "Table 4", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "recall", "value": 0.720, "source_locator": "Table 4", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "specificity", "value": 0.994, "source_locator": "Table 4", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "late-10pct", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auroc", "value": 0.901, "source_locator": "Table 7", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "late-10pct", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auc_pr", "value": 0.452, "source_locator": "Table 7", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "late-10pct", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "f1", "value": 0.518, "source_locator": "Table 7", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "late-10pct", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auroc", "value": 0.951, "source_locator": "Table 8", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "late-10pct", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "auc_pr", "value": 0.642, "source_locator": "Table 8", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "late-10pct", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "f1", "value": 0.687, "source_locator": "Table 8", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "ece_before_ot", "value": 0.038, "source_locator": "Table 12", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "ece_after_ot", "value": 0.014, "source_locator": "Table 12", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "ece_before_ot", "value": 0.037, "source_locator": "Table 12", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "ece_after_ot", "value": 0.013, "source_locator": "Table 12", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "verifier_routed_share", "value": 0.078, "source_locator": "Table 13", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "verifier_routed_share", "value": 0.063, "source_locator": "Table 13", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "selected_threshold", "value": 0.034, "source_locator": "Section 2.7 / Eq. 11", "evidence_status": "paper-reported"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "selected_threshold", "value": 0.033, "source_locator": "Section 2.7 / Eq. 11", "evidence_status": "paper-reported"},
+    {"dataset_id": "baf-base", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "net_savings_unstated_units", "value": 56485, "source_locator": "Table 14", "evidence_status": "paper-reported", "caveat": "author-defined cost model; units not stated"},
+    {"dataset_id": "ieee-cis", "split_id": "test", "protocol_id": "chrono-70-15-15-mean-of-5-seeds", "metric": "net_savings_unstated_units", "value": 221283, "source_locator": "Table 15", "evidence_status": "paper-reported", "caveat": "author-defined cost model; units not stated"}
+  ],
+  "strongest_baseline": {
+    "name": "FraudGT",
+    "baf-base": {"auroc": 0.907, "auc_pr": 0.471, "f1": 0.534, "source_locator": "Table 3"},
+    "ieee-cis": {"auroc": 0.962, "auc_pr": 0.668, "f1": 0.722, "source_locator": "Table 4"},
+    "evidence_status": "paper-reported",
+    "implemented_here": false
+  }
+}

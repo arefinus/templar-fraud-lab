@@ -1,0 +1,10 @@
+{
+  "late_rows": 600,
+  "test_rows": 900,
+  "late_in_test": 600,
+  "late_in_val": 0,
+  "late_in_train": 0,
+  "share_of_late_inside_test": 1.0,
+  "share_of_test_that_is_late": 0.6666666666666666,
+  "interpretation": "The late slice is the final 10% of rows in time; the test split is the final 15%. With these fractions the late slice is a strict subset of the test split, so late-slice metrics are NOT independent of test metrics. Measured, not assumed."
+}

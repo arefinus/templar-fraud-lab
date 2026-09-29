@@ -1,0 +1,63 @@
+# Smoke configuration: first 2,400 rows of the fixture, tiny models, no MCTS. Under 30 s.
+mode: smoke
+seed: 42
+fixture_dir: examples/fixtures/v1
+output_dir: .smoke_output
+max_rows: 2400
+
+split:
+  fractions: [0.70, 0.15, 0.15]
+  late_fraction: 0.10
+
+preprocess:
+  te_smoothing: 20.0
+
+saint:
+  token_dim: 8
+  out_dim: 8
+  n_blocks: 1
+  n_heads: 2
+  ff_mult: 2
+  dropout: 0.10
+  context: 256
+  epochs: 2
+  lr: 0.001
+  weight_decay: 0.00001
+  gamma: 2.0
+  patience: 2
+  loss: focal
+
+triage:
+  iterations: 60
+  depth: 3
+  learning_rate: 0.15
+  l2_leaf_reg: 5.0
+  random_strength: 0.30
+  bagging_temperature: 0.50
+
+routing:
+  rule: eq5
+  gamma_low: 0.18
+  gamma_high: 0.72
+  t_u: 0.25
+  uncertainty: rank_disagreement
+
+templates:
+  bank: demo
+  mcts:
+    enabled: false
+
+stacking:
+  lr: 0.02
+  iterations: 150
+  mc_samples: 16
+  patience: 50
+
+calibration:
+  n_knots: 16
+  min_support: 10
+  ece_bins: 10
+
+decision:
+  costs_file: configs/demo_costs.yaml
+  review_uncertainty: 0.35

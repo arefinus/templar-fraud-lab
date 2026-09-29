@@ -1,0 +1,7 @@
+# DEMO cost matrix. The source paper does not state cost units or values, so these
+# numbers are illustrative and user-editable. Units are arbitrary "demo units".
+# Change them and re-run `python -m templar_fraud_lab demo` to see t* move.
+label: demo
+c_fp: 1.0        # cost of flagging a legitimate transaction as fraud
+c_fn: 20.0       # cost of missing a fraudulent transaction
+c_review: 2.0    # cost of sending a transaction to human review

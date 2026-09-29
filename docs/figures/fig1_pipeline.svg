@@ -1,0 +1,46 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1410' height='240' viewBox='0 0 1410 240'>
+<defs><marker id='arrow' markerWidth='8' markerHeight='8' refX='7' refY='4' orient='auto'><path d='M0,0 L8,4 L0,8 z' fill='#1F2A37'/></marker></defs>
+<rect width='1410' height='240' fill='white'/>
+<text x='16' y='24' font-family='Helvetica, Arial, sans-serif' font-size='14' font-weight='bold' fill='#1F2A37'>Figure 1 (adapted): routed, verifier-grounded, calibrated and cost-sensitive pipeline</text>
+<rect x='20' y='70' width='120' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='80.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Transactions</text>
+<text x='80.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>chronological</text>
+<rect x='170' y='70' width='130' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='235.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Preprocess</text>
+<text x='235.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>train-only fit</text>
+<rect x='330' y='70' width='130' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='395.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>SAINT-style</text>
+<text x='395.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>encoder z, p_z</text>
+<rect x='490' y='70' width='130' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='555.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>CatBoost triage</text>
+<text x='555.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>p_triage on [z, x]</text>
+<rect x='650' y='70' width='120' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='710.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Routing</text>
+<text x='710.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>Eq. 5 or band</text>
+<rect x='800' y='20' width='130' height='56' rx='8' fill='#F7F7F5' stroke='#1F2A37' stroke-width='1.5'/>
+<text x='865.0' y='44.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Fast path</text>
+<text x='865.0' y='60.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>no rationale</text>
+<rect x='800' y='120' width='130' height='56' rx='8' fill='#F7F7F5' stroke='#B4531F' stroke-width='1.5'/>
+<text x='865.0' y='144.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Escalation</text>
+<text x='865.0' y='160.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>templates + verifier</text>
+<rect x='960' y='70' width='130' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='1025.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Stacking</text>
+<text x='1025.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>available sources</text>
+<rect x='1120' y='70' width='120' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='1180.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>OT calibration</text>
+<text x='1180.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>fit on validation</text>
+<rect x='1270' y='70' width='120' height='56' rx='8' fill='#EEF3F8' stroke='#2E5A88' stroke-width='1.5'/>
+<text x='1330.0' y='94.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='12' font-weight='bold' fill='#1F2A37'>Decision</text>
+<text x='1330.0' y='110.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>fraud / legit / review</text>
+<line x1='140' y1='98' x2='170' y2='98' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='300' y1='98' x2='330' y2='98' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='460' y1='98' x2='490' y2='98' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='620' y1='98' x2='650' y2='98' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='770' y1='90' x2='800' y2='48' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/><text x='785.0' y='63.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='9' fill='#1F2A37'>fast</text>
+<line x1='770' y1='106' x2='800' y2='148' stroke='#B4531F' stroke-width='1.4' marker-end='url(#arrow)'/><text x='785.0' y='121.0' text-anchor='middle' font-family='Helvetica, Arial, sans-serif' font-size='9' fill='#B4531F'>escalate</text>
+<line x1='930' y1='48' x2='960' y2='90' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='930' y1='148' x2='960' y2='106' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='1090' y1='98' x2='1120' y2='98' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/>
+<line x1='1240' y1='98' x2='1270' y2='98' stroke='#1F2A37' stroke-width='1.4' marker-end='url(#arrow)'/><text x='20' y='215' font-family='Helvetica, Arial, sans-serif' font-size='10' fill='#1F2A37'>Splits: 70/15/15 chronological; validation drives early stopping, stacking, calibration and the cost threshold; the test slice is touched once.</text>
+<text x='16' y='230' font-family='Helvetica, Arial, sans-serif' font-size='8' fill='#555'>Original drawing adapted from the structure of the source article's figure (Discover Data 4:20, 2026, CC BY 4.0). Redrawn by tools/render_figures.py.</text>
+</svg>

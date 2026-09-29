@@ -1,0 +1,499 @@
+{
+  "version": "v1",
+  "origin": "mcts-discovered",
+  "evidence_status": "demo",
+  "templates": [
+    {
+      "template_id": "T01",
+      "reason_code": "HIGH_AMOUNT",
+      "predicate": {
+        "op": ">",
+        "args": [
+          {
+            "feat": "amount"
+          },
+          {
+            "const": 250.0
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": "amount above 250"
+    },
+    {
+      "template_id": "T02",
+      "reason_code": "VERY_HIGH_AMOUNT",
+      "predicate": {
+        "op": ">",
+        "args": [
+          {
+            "feat": "amount"
+          },
+          {
+            "const": 800.0
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": "amount above 800"
+    },
+    {
+      "template_id": "T03",
+      "reason_code": "COUNTRY_MISMATCH",
+      "predicate": {
+        "op": "==",
+        "args": [
+          {
+            "feat": "country_match"
+          },
+          {
+            "const": 0
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T04",
+      "reason_code": "EMULATOR_DEVICE",
+      "predicate": {
+        "op": "==",
+        "args": [
+          {
+            "feat": "device_type"
+          },
+          {
+            "const": "emulator"
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T05",
+      "reason_code": "HIGH_IP_RISK",
+      "predicate": {
+        "op": ">=",
+        "args": [
+          {
+            "feat": "ip_risk_score"
+          },
+          {
+            "const": 0.5
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T06",
+      "reason_code": "BURST_VELOCITY",
+      "predicate": {
+        "op": ">=",
+        "args": [
+          {
+            "feat": "velocity_1h"
+          },
+          {
+            "const": 3
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T07",
+      "reason_code": "NEW_ACCOUNT",
+      "predicate": {
+        "op": "<",
+        "args": [
+          {
+            "feat": "account_age_days"
+          },
+          {
+            "const": 30
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T08",
+      "reason_code": "NEW_ACCOUNT_HIGH_AMOUNT",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "op": "<",
+            "args": [
+              {
+                "feat": "account_age_days"
+              },
+              {
+                "const": 60
+              }
+            ]
+          },
+          {
+            "op": ">",
+            "args": [
+              {
+                "feat": "amount"
+              },
+              {
+                "const": 120.0
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T09",
+      "reason_code": "MISMATCH_AND_RISKY_IP",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "op": "==",
+            "args": [
+              {
+                "feat": "country_match"
+              },
+              {
+                "const": 0
+              }
+            ]
+          },
+          {
+            "op": ">=",
+            "args": [
+              {
+                "feat": "ip_risk_score"
+              },
+              {
+                "const": 0.3
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T10",
+      "reason_code": "NON_ESSENTIAL_CATEGORY_HIGH_AMOUNT",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "args": [
+              {
+                "op": "in",
+                "args": [
+                  {
+                    "feat": "merchant_category"
+                  },
+                  {
+                    "const": [
+                      "grocery",
+                      "fuel",
+                      "restaurants"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": ">",
+            "args": [
+              {
+                "feat": "amount"
+              },
+              {
+                "const": 150.0
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": "merchant category outside the essentials list and amount above 150"
+    },
+    {
+      "template_id": "T11",
+      "reason_code": "NIGHT_TRANSACTION",
+      "predicate": {
+        "op": "or",
+        "args": [
+          {
+            "op": "<",
+            "args": [
+              {
+                "feat": "hour"
+              },
+              {
+                "const": 5
+              }
+            ]
+          },
+          {
+            "op": ">=",
+            "args": [
+              {
+                "feat": "hour"
+              },
+              {
+                "const": 23
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T12",
+      "reason_code": "RAPID_REPEAT",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "op": ">=",
+            "args": [
+              {
+                "feat": "time_since_last_card_event"
+              },
+              {
+                "const": 0
+              }
+            ]
+          },
+          {
+            "op": "<",
+            "args": [
+              {
+                "feat": "time_since_last_card_event"
+              },
+              {
+                "const": 600
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T13",
+      "reason_code": "EMULATOR_MISMATCH",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "op": "==",
+            "args": [
+              {
+                "feat": "device_type"
+              },
+              {
+                "const": "emulator"
+              }
+            ]
+          },
+          {
+            "op": "==",
+            "args": [
+              {
+                "feat": "country_match"
+              },
+              {
+                "const": 0
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T14",
+      "reason_code": "AMOUNT_PER_AGE_DAY",
+      "predicate": {
+        "op": ">",
+        "args": [
+          {
+            "op": "/",
+            "args": [
+              {
+                "feat": "amount"
+              },
+              {
+                "feat": "account_age_days"
+              }
+            ]
+          },
+          {
+            "const": 5.0
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T15",
+      "reason_code": "RISK_SUM",
+      "predicate": {
+        "op": ">",
+        "args": [
+          {
+            "op": "sum",
+            "args": [
+              {
+                "feat": "ip_risk_score"
+              },
+              {
+                "feat": "velocity_1h"
+              }
+            ]
+          },
+          {
+            "const": 2.5
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "T16",
+      "reason_code": "MISSING_IP_HIGH_AMOUNT",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "op": "not",
+            "args": [
+              {
+                "op": ">=",
+                "args": [
+                  {
+                    "feat": "ip_risk_score"
+                  },
+                  {
+                    "const": 0.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": ">",
+            "args": [
+              {
+                "feat": "amount"
+              },
+              {
+                "const": 100.0
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "demo",
+      "description": ""
+    },
+    {
+      "template_id": "M01",
+      "reason_code": "MCTS_RULE_1",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "op": "<=",
+            "args": [
+              {
+                "feat": "account_age_days"
+              },
+              {
+                "const": 1901.0
+              }
+            ]
+          },
+          {
+            "op": "==",
+            "args": [
+              {
+                "feat": "merchant_category"
+              },
+              {
+                "const": "electronics"
+              }
+            ]
+          },
+          {
+            "op": ">",
+            "args": [
+              {
+                "feat": "account_age_days"
+              },
+              {
+                "const": 997.0
+              }
+            ]
+          }
+        ]
+      },
+      "origin": "mcts-discovered",
+      "description": "discovered by tools MCTS on synthetic fixture; demo only"
+    },
+    {
+      "template_id": "M02",
+      "reason_code": "MCTS_RULE_2",
+      "predicate": {
+        "op": "<=",
+        "args": [
+          {
+            "feat": "amount"
+          },
+          {
+            "const": 35.195
+          }
+        ]
+      },
+      "origin": "mcts-discovered",
+      "description": "discovered by tools MCTS on synthetic fixture; demo only"
+    },
+    {
+      "template_id": "M03",
+      "reason_code": "MCTS_RULE_3",
+      "predicate": {
+        "op": ">",
+        "args": [
+          {
+            "feat": "velocity_1h"
+          },
+          {
+            "const": 0.0
+          }
+        ]
+      },
+      "origin": "mcts-discovered",
+      "description": "discovered by tools MCTS on synthetic fixture; demo only"
+    }
+  ]
+}

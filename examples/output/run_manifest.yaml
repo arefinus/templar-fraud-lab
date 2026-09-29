@@ -1,0 +1,26 @@
+schema_version: 1
+project_id: templar-fraud-lab
+run_id: 20260928T103931Z-demo
+status: completed
+mode: demo
+evidence_status: demo
+git_commit: null
+data:
+  source_id: synthetic-fixture-v1
+  version: v1
+  split_manifest_hash: bd5b8a5a09cacf79860a1d9ad1005aa6fd395fb7ca94f966c87f80e9a1ccb1e1
+  sample_counts:
+    train: 4200
+    val: 900
+    test: 900
+    late: 600
+configuration_hash: 473aef7a6d9827371c2094a88698b1c5138a76ce5d5a8b79934c650888d1e834
+seed: 42
+environment:
+  python: 3.10.11
+  device: cpu
+metrics_file: examples\output\metrics.json
+predictions_file: examples\output\predictions.csv
+started_at: '2026-09-28T10:39:31+00:00'
+finished_at: '2026-09-28T10:40:49+00:00'
+notes: []

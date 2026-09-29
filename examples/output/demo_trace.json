@@ -1,0 +1,1418 @@
+{
+  "schemaVersion": 1,
+  "mode": "synthetic-demo",
+  "scenarioId": "fixture-v1-seed42-test-sample",
+  "note": "Synthetic fixture rows. Fictional identifiers. Not real transactions.",
+  "transactionIds": [
+    "SYN-TX-005668",
+    "SYN-TX-005739",
+    "SYN-TX-005942",
+    "SYN-TX-005307",
+    "SYN-TX-005783",
+    "SYN-TX-005844",
+    "SYN-TX-005621",
+    "SYN-TX-005962"
+  ],
+  "steps": [
+    {
+      "id": "SYN-TX-005668/ingest",
+      "transactionId": "SYN-TX-005668",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005668"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 40.82,
+        "merchant_category": "digital_goods",
+        "device_type": "pos",
+        "country_match": 1
+      }
+    },
+    {
+      "id": "SYN-TX-005668/preprocess",
+      "transactionId": "SYN-TX-005668",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005668"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005668/encoder",
+      "transactionId": "SYN-TX-005668",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005668",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005668",
+        "p_z:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.409656,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005668/triage",
+      "transactionId": "SYN-TX-005668",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005668",
+        "x:SYN-TX-005668"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.001787
+      }
+    },
+    {
+      "id": "SYN-TX-005668/routing",
+      "transactionId": "SYN-TX-005668",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005668",
+        "p_z:SYN-TX-005668"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_FAST"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.004048,
+        "route": "fast"
+      }
+    },
+    {
+      "id": "SYN-TX-005668/stacking",
+      "transactionId": "SYN-TX-005668",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005668",
+        "p_escalation:SYN-TX-005668",
+        "p_z:SYN-TX-005668"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.010419,
+        "disagreement": 0.058704,
+        "sources_available": 2
+      }
+    },
+    {
+      "id": "SYN-TX-005668/calibration",
+      "transactionId": "SYN-TX-005668",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005668"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.0
+      }
+    },
+    {
+      "id": "SYN-TX-005668/decision",
+      "transactionId": "SYN-TX-005668",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005668",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005668"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "DECISION_LEGITIMATE"
+      ],
+      "detail": {
+        "decision": "legitimate",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005739/ingest",
+      "transactionId": "SYN-TX-005739",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005739"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 40.48,
+        "merchant_category": "digital_goods",
+        "device_type": "pos",
+        "country_match": 1
+      }
+    },
+    {
+      "id": "SYN-TX-005739/preprocess",
+      "transactionId": "SYN-TX-005739",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005739"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005739/encoder",
+      "transactionId": "SYN-TX-005739",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005739",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005739",
+        "p_z:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.411364,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005739/triage",
+      "transactionId": "SYN-TX-005739",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005739",
+        "x:SYN-TX-005739"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.001808
+      }
+    },
+    {
+      "id": "SYN-TX-005739/routing",
+      "transactionId": "SYN-TX-005739",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005739",
+        "p_z:SYN-TX-005739"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_FAST"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.043571,
+        "route": "fast"
+      }
+    },
+    {
+      "id": "SYN-TX-005739/stacking",
+      "transactionId": "SYN-TX-005739",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005739",
+        "p_escalation:SYN-TX-005739",
+        "p_z:SYN-TX-005739"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.010476,
+        "disagreement": 0.058947,
+        "sources_available": 2
+      }
+    },
+    {
+      "id": "SYN-TX-005739/calibration",
+      "transactionId": "SYN-TX-005739",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005739"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.0
+      }
+    },
+    {
+      "id": "SYN-TX-005739/decision",
+      "transactionId": "SYN-TX-005739",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005739",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005739"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "DECISION_LEGITIMATE"
+      ],
+      "detail": {
+        "decision": "legitimate",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005942/ingest",
+      "transactionId": "SYN-TX-005942",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005942"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 27.21,
+        "merchant_category": "fuel",
+        "device_type": "mobile_app",
+        "country_match": 1
+      }
+    },
+    {
+      "id": "SYN-TX-005942/preprocess",
+      "transactionId": "SYN-TX-005942",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005942"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005942/encoder",
+      "transactionId": "SYN-TX-005942",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005942",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005942",
+        "p_z:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.412922,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005942/triage",
+      "transactionId": "SYN-TX-005942",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005942",
+        "x:SYN-TX-005942"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.024326
+      }
+    },
+    {
+      "id": "SYN-TX-005942/routing",
+      "transactionId": "SYN-TX-005942",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005942",
+        "p_z:SYN-TX-005942"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_FAST"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.021429,
+        "route": "fast"
+      }
+    },
+    {
+      "id": "SYN-TX-005942/stacking",
+      "transactionId": "SYN-TX-005942",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005942",
+        "p_escalation:SYN-TX-005942",
+        "p_z:SYN-TX-005942"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.03255,
+        "disagreement": 0.05593,
+        "sources_available": 2
+      }
+    },
+    {
+      "id": "SYN-TX-005942/calibration",
+      "transactionId": "SYN-TX-005942",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005942"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.0
+      }
+    },
+    {
+      "id": "SYN-TX-005942/decision",
+      "transactionId": "SYN-TX-005942",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005942",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005942"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "DECISION_LEGITIMATE"
+      ],
+      "detail": {
+        "decision": "legitimate",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005307/ingest",
+      "transactionId": "SYN-TX-005307",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005307"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 38.71,
+        "merchant_category": "gaming",
+        "device_type": "pos",
+        "country_match": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005307/preprocess",
+      "transactionId": "SYN-TX-005307",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005307"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005307/encoder",
+      "transactionId": "SYN-TX-005307",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005307",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005307",
+        "p_z:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.436883,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005307/triage",
+      "transactionId": "SYN-TX-005307",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005307",
+        "x:SYN-TX-005307"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.48331
+      }
+    },
+    {
+      "id": "SYN-TX-005307/routing",
+      "transactionId": "SYN-TX-005307",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005307",
+        "p_z:SYN-TX-005307"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_ESCALATION"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.039286,
+        "route": "escalation"
+      }
+    },
+    {
+      "id": "SYN-TX-005307/templates",
+      "transactionId": "SYN-TX-005307",
+      "stage": "templates",
+      "inputRefs": [
+        "features:SYN-TX-005307",
+        "bank:template_bank.json"
+      ],
+      "outputRefs": [
+        "rationales:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "COUNTRY_MISMATCH",
+        "NIGHT_TRANSACTION"
+      ],
+      "detail": {
+        "fired_templates": [
+          "T03",
+          "T11"
+        ]
+      }
+    },
+    {
+      "id": "SYN-TX-005307/verifier",
+      "transactionId": "SYN-TX-005307",
+      "stage": "verifier",
+      "inputRefs": [
+        "rationales:SYN-TX-005307"
+      ],
+      "outputRefs": [
+        "p_escalation:SYN-TX-005307"
+      ],
+      "status": "pass",
+      "reasonCodes": [],
+      "detail": {
+        "verification_status": "pass",
+        "p_escalation": 0.559849
+      }
+    },
+    {
+      "id": "SYN-TX-005307/stacking",
+      "transactionId": "SYN-TX-005307",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005307",
+        "p_escalation:SYN-TX-005307",
+        "p_z:SYN-TX-005307"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.50324,
+        "disagreement": 0.034877,
+        "sources_available": 3
+      }
+    },
+    {
+      "id": "SYN-TX-005307/calibration",
+      "transactionId": "SYN-TX-005307",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005307"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.035714
+      }
+    },
+    {
+      "id": "SYN-TX-005307/decision",
+      "transactionId": "SYN-TX-005307",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005307",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005307"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "DECISION_LEGITIMATE"
+      ],
+      "detail": {
+        "decision": "legitimate",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005783/ingest",
+      "transactionId": "SYN-TX-005783",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005783"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 12.76,
+        "merchant_category": "gaming",
+        "device_type": "mobile_app",
+        "country_match": 1
+      }
+    },
+    {
+      "id": "SYN-TX-005783/preprocess",
+      "transactionId": "SYN-TX-005783",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005783"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005783/encoder",
+      "transactionId": "SYN-TX-005783",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005783",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005783",
+        "p_z:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.441583,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005783/triage",
+      "transactionId": "SYN-TX-005783",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005783",
+        "x:SYN-TX-005783"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.5841
+      }
+    },
+    {
+      "id": "SYN-TX-005783/routing",
+      "transactionId": "SYN-TX-005783",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005783",
+        "p_z:SYN-TX-005783"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_ESCALATION"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.025952,
+        "route": "escalation"
+      }
+    },
+    {
+      "id": "SYN-TX-005783/templates",
+      "transactionId": "SYN-TX-005783",
+      "stage": "templates",
+      "inputRefs": [
+        "features:SYN-TX-005783",
+        "bank:template_bank.json"
+      ],
+      "outputRefs": [
+        "rationales:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "MCTS_RULE_2",
+        "MCTS_RULE_3"
+      ],
+      "detail": {
+        "fired_templates": [
+          "M02",
+          "M03"
+        ]
+      }
+    },
+    {
+      "id": "SYN-TX-005783/verifier",
+      "transactionId": "SYN-TX-005783",
+      "stage": "verifier",
+      "inputRefs": [
+        "rationales:SYN-TX-005783"
+      ],
+      "outputRefs": [
+        "p_escalation:SYN-TX-005783"
+      ],
+      "status": "pass",
+      "reasonCodes": [],
+      "detail": {
+        "verification_status": "pass",
+        "p_escalation": 0.291106
+      }
+    },
+    {
+      "id": "SYN-TX-005783/stacking",
+      "transactionId": "SYN-TX-005783",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005783",
+        "p_escalation:SYN-TX-005783",
+        "p_z:SYN-TX-005783"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.50286,
+        "disagreement": 0.12989,
+        "sources_available": 3
+      }
+    },
+    {
+      "id": "SYN-TX-005783/calibration",
+      "transactionId": "SYN-TX-005783",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005783"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.035714
+      }
+    },
+    {
+      "id": "SYN-TX-005783/decision",
+      "transactionId": "SYN-TX-005783",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005783",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005783"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "DECISION_LEGITIMATE"
+      ],
+      "detail": {
+        "decision": "legitimate",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005844/ingest",
+      "transactionId": "SYN-TX-005844",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005844"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 7.55,
+        "merchant_category": "apparel",
+        "device_type": "mobile_app",
+        "country_match": 1
+      }
+    },
+    {
+      "id": "SYN-TX-005844/preprocess",
+      "transactionId": "SYN-TX-005844",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005844"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005844/encoder",
+      "transactionId": "SYN-TX-005844",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005844",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005844",
+        "p_z:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.429827,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005844/triage",
+      "transactionId": "SYN-TX-005844",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005844",
+        "x:SYN-TX-005844"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.197692
+      }
+    },
+    {
+      "id": "SYN-TX-005844/routing",
+      "transactionId": "SYN-TX-005844",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005844",
+        "p_z:SYN-TX-005844"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_ESCALATION"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.207381,
+        "route": "escalation"
+      }
+    },
+    {
+      "id": "SYN-TX-005844/templates",
+      "transactionId": "SYN-TX-005844",
+      "stage": "templates",
+      "inputRefs": [
+        "features:SYN-TX-005844",
+        "bank:template_bank.json"
+      ],
+      "outputRefs": [
+        "rationales:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "MCTS_RULE_2",
+        "MCTS_RULE_3"
+      ],
+      "detail": {
+        "fired_templates": [
+          "M02",
+          "M03"
+        ]
+      }
+    },
+    {
+      "id": "SYN-TX-005844/verifier",
+      "transactionId": "SYN-TX-005844",
+      "stage": "verifier",
+      "inputRefs": [
+        "rationales:SYN-TX-005844"
+      ],
+      "outputRefs": [
+        "p_escalation:SYN-TX-005844"
+      ],
+      "status": "pass",
+      "reasonCodes": [],
+      "detail": {
+        "verification_status": "pass",
+        "p_escalation": 0.291106
+      }
+    },
+    {
+      "id": "SYN-TX-005844/stacking",
+      "transactionId": "SYN-TX-005844",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005844",
+        "p_escalation:SYN-TX-005844",
+        "p_z:SYN-TX-005844"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.226479,
+        "disagreement": 0.04856,
+        "sources_available": 3
+      }
+    },
+    {
+      "id": "SYN-TX-005844/calibration",
+      "transactionId": "SYN-TX-005844",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005844"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.0
+      }
+    },
+    {
+      "id": "SYN-TX-005844/decision",
+      "transactionId": "SYN-TX-005844",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005844",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005844"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "DECISION_LEGITIMATE"
+      ],
+      "detail": {
+        "decision": "legitimate",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005621/ingest",
+      "transactionId": "SYN-TX-005621",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005621"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 2120.0,
+        "merchant_category": "digital_goods",
+        "device_type": "mobile_app",
+        "country_match": 1
+      }
+    },
+    {
+      "id": "SYN-TX-005621/preprocess",
+      "transactionId": "SYN-TX-005621",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005621"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005621/encoder",
+      "transactionId": "SYN-TX-005621",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005621",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005621",
+        "p_z:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.424886,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005621/triage",
+      "transactionId": "SYN-TX-005621",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005621",
+        "x:SYN-TX-005621"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.595531
+      }
+    },
+    {
+      "id": "SYN-TX-005621/routing",
+      "transactionId": "SYN-TX-005621",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005621",
+        "p_z:SYN-TX-005621"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_ESCALATION"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.333571,
+        "route": "escalation"
+      }
+    },
+    {
+      "id": "SYN-TX-005621/templates",
+      "transactionId": "SYN-TX-005621",
+      "stage": "templates",
+      "inputRefs": [
+        "features:SYN-TX-005621",
+        "bank:template_bank.json"
+      ],
+      "outputRefs": [
+        "rationales:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "HIGH_AMOUNT",
+        "VERY_HIGH_AMOUNT",
+        "NON_ESSENTIAL_CATEGORY_HIGH_AMOUNT"
+      ],
+      "detail": {
+        "fired_templates": [
+          "T01",
+          "T02",
+          "T10"
+        ]
+      }
+    },
+    {
+      "id": "SYN-TX-005621/verifier",
+      "transactionId": "SYN-TX-005621",
+      "stage": "verifier",
+      "inputRefs": [
+        "rationales:SYN-TX-005621"
+      ],
+      "outputRefs": [
+        "review_flag:SYN-TX-005621"
+      ],
+      "status": "fail",
+      "reasonCodes": [
+        "RANGE_NUMERIC_OUTSIDE_TRAINING:amount"
+      ],
+      "detail": {
+        "verification_status": "fail",
+        "p_escalation": null
+      }
+    },
+    {
+      "id": "SYN-TX-005621/stacking",
+      "transactionId": "SYN-TX-005621",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005621",
+        "p_escalation:SYN-TX-005621",
+        "p_z:SYN-TX-005621"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.59192,
+        "disagreement": 0.024561,
+        "sources_available": 2
+      }
+    },
+    {
+      "id": "SYN-TX-005621/calibration",
+      "transactionId": "SYN-TX-005621",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005621"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005621"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.071429
+      }
+    },
+    {
+      "id": "SYN-TX-005621/decision",
+      "transactionId": "SYN-TX-005621",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005621",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005621"
+      ],
+      "status": "review",
+      "reasonCodes": [
+        "DECISION_REVIEW",
+        "VERIFIER_FAIL_ROUTED_TO_REVIEW"
+      ],
+      "detail": {
+        "decision": "review",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    },
+    {
+      "id": "SYN-TX-005962/ingest",
+      "transactionId": "SYN-TX-005962",
+      "stage": "ingest",
+      "inputRefs": [
+        "tx:SYN-TX-005962"
+      ],
+      "outputRefs": [
+        "features:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "amount": 5608.4,
+        "merchant_category": "fuel",
+        "device_type": "mobile_app",
+        "country_match": 1
+      }
+    },
+    {
+      "id": "SYN-TX-005962/preprocess",
+      "transactionId": "SYN-TX-005962",
+      "stage": "preprocess",
+      "inputRefs": [
+        "features:SYN-TX-005962"
+      ],
+      "outputRefs": [
+        "x:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "feature_count": 22
+      }
+    },
+    {
+      "id": "SYN-TX-005962/encoder",
+      "transactionId": "SYN-TX-005962",
+      "stage": "encoder",
+      "inputRefs": [
+        "x:SYN-TX-005962",
+        "context:earlier-or-equal-rows"
+      ],
+      "outputRefs": [
+        "z:SYN-TX-005962",
+        "p_z:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_z": 0.419325,
+        "context_policy": "historical (ts_j <= ts_i)"
+      }
+    },
+    {
+      "id": "SYN-TX-005962/triage",
+      "transactionId": "SYN-TX-005962",
+      "stage": "triage",
+      "inputRefs": [
+        "z:SYN-TX-005962",
+        "x:SYN-TX-005962"
+      ],
+      "outputRefs": [
+        "p_triage:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_triage": 0.32177
+      }
+    },
+    {
+      "id": "SYN-TX-005962/routing",
+      "transactionId": "SYN-TX-005962",
+      "stage": "routing",
+      "inputRefs": [
+        "p_triage:SYN-TX-005962",
+        "p_z:SYN-TX-005962"
+      ],
+      "outputRefs": [
+        "route:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "ROUTE_ESCALATION"
+      ],
+      "detail": {
+        "rule": "eq5",
+        "uncertainty": 0.252857,
+        "route": "escalation"
+      }
+    },
+    {
+      "id": "SYN-TX-005962/templates",
+      "transactionId": "SYN-TX-005962",
+      "stage": "templates",
+      "inputRefs": [
+        "features:SYN-TX-005962",
+        "bank:template_bank.json"
+      ],
+      "outputRefs": [
+        "rationales:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [
+        "HIGH_AMOUNT",
+        "VERY_HIGH_AMOUNT"
+      ],
+      "detail": {
+        "fired_templates": [
+          "T01",
+          "T02"
+        ]
+      }
+    },
+    {
+      "id": "SYN-TX-005962/verifier",
+      "transactionId": "SYN-TX-005962",
+      "stage": "verifier",
+      "inputRefs": [
+        "rationales:SYN-TX-005962"
+      ],
+      "outputRefs": [
+        "review_flag:SYN-TX-005962"
+      ],
+      "status": "fail",
+      "reasonCodes": [
+        "RANGE_NUMERIC_OUTSIDE_TRAINING:amount"
+      ],
+      "detail": {
+        "verification_status": "fail",
+        "p_escalation": null
+      }
+    },
+    {
+      "id": "SYN-TX-005962/stacking",
+      "transactionId": "SYN-TX-005962",
+      "stage": "stacking",
+      "inputRefs": [
+        "p_triage:SYN-TX-005962",
+        "p_escalation:SYN-TX-005962",
+        "p_z:SYN-TX-005962"
+      ],
+      "outputRefs": [
+        "p_stacked:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_stacked": 0.323835,
+        "disagreement": 0.014041,
+        "sources_available": 2
+      }
+    },
+    {
+      "id": "SYN-TX-005962/calibration",
+      "transactionId": "SYN-TX-005962",
+      "stage": "calibration",
+      "inputRefs": [
+        "p_stacked:SYN-TX-005962"
+      ],
+      "outputRefs": [
+        "p_calibrated:SYN-TX-005962"
+      ],
+      "status": "ok",
+      "reasonCodes": [],
+      "detail": {
+        "p_calibrated": 0.035497
+      }
+    },
+    {
+      "id": "SYN-TX-005962/decision",
+      "transactionId": "SYN-TX-005962",
+      "stage": "decision",
+      "inputRefs": [
+        "p_calibrated:SYN-TX-005962",
+        "threshold:0.058"
+      ],
+      "outputRefs": [
+        "decision:SYN-TX-005962"
+      ],
+      "status": "review",
+      "reasonCodes": [
+        "DECISION_REVIEW",
+        "VERIFIER_FAIL_ROUTED_TO_REVIEW"
+      ],
+      "detail": {
+        "decision": "review",
+        "threshold": 0.058,
+        "label_synthetic": 0
+      }
+    }
+  ]
+}

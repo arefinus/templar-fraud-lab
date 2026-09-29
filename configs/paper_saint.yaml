@@ -1,0 +1,37 @@
+# Settings taken from the source paper for the SAINT-style encoder (evidence: paper-reported).
+# These are recorded for fidelity; the demo does NOT run them (they need the real datasets and
+# hours of compute). See docs/method.md, "Settings taken from the source paper".
+evidence_status: paper-reported
+source: "Discover Data 4:20 (2026), DOI 10.1007/s44248-026-00117-y, Section 2.7 and Table 2"
+encoder:
+  blocks: 6
+  heads: 8
+  token_dim: 32
+  output_dim: 64
+  history_context: 128
+  feedforward_multiplier: 4
+  dropout: 0.10
+training:
+  loss: focal
+  focal_gamma: 2
+  weight_decay: 0.00001
+  optimizer: AdamW
+  mixed_precision: true
+  grad_clip: 1.0
+  warmup_epochs: 5
+  schedule: cosine
+  max_epochs: 100
+  early_stopping_patience: 12
+  d1_baf:
+    learning_rate: 0.0003
+    batch_size: 2048
+  d2_ieee_cis:
+    learning_rate: 0.0002
+    batch_size: 1024
+search:
+  method: TPE
+  trials: 50
+  random_startup_trials: 10
+  objective: mean forward-chaining validation AUC-PR
+  tie_rule: "under 0.002 AUC-PR difference, lower validation expected cost wins"
+seeds: [11, 23, 37, 53, 79]

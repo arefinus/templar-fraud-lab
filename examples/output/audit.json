@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "evidence_status": "demo",
+  "note": "Measured values come from the synthetic fixture demo run and are not benchmark results.",
+  "ambiguities": [
+    {
+      "id": "A01",
+      "title": "Temporal overlap of the final-10% slice with the 15% test split",
+      "repo": "Measured and exported to late_slice_overlap.json; late slice is a subset of test here.",
+      "evidence_status": "demo",
+      "measured": {
+        "late_rows": 600,
+        "test_rows": 900,
+        "late_in_test": 600,
+        "late_in_val": 0,
+        "late_in_train": 0,
+        "share_of_late_inside_test": 1.0,
+        "share_of_test_that_is_late": 0.6666666666666666,
+        "interpretation": "The late slice is the final 10% of rows in time; the test split is the final 15%. With these fractions the late slice is a strict subset of the test split, so late-slice metrics are NOT independent of test metrics. Measured, not assumed."
+      }
+    },
+    {
+      "id": "A02",
+      "title": "Calendar and entity availability in BAF (month only; no card/IP/device)",
+      "repo": "BAF adapter uses month as the only chronological key and no entity graph.",
+      "evidence_status": "documented-only",
+      "measured": null
+    },
+    {
+      "id": "A03",
+      "title": "Calibration sample count (100,000 stated vs 88,581 = 15% of IEEE-CIS)",
+      "repo": "Calibrator is fitted on the validation split only; the count is whatever the split yields.",
+      "evidence_status": "documented-only",
+      "measured": null
+    },
+    {
+      "id": "A04",
+      "title": "Routing rule: Eq. 5 (p < gamma_low and u < T_u) vs low/high band thresholds",
+      "repo": "Both implemented behind routing.rule; default eq5; escalation shares under both are exported.",
+      "evidence_status": "demo",
+      "measured": {
+        "eq5": 0.6588888888888889,
+        "band": 0.5011111111111111
+      }
+    },
+    {
+      "id": "A05",
+      "title": "Fit scope of stacking and calibration (validation split vs pooled OOF)",
+      "repo": "Both fitted on the 15% validation split, never on test; no pooled OOF.",
+      "evidence_status": "demo",
+      "measured": {
+        "calibration_fit_rows": 900,
+        "stacking_weights": {
+          "p_triage": 0.7147870111417068,
+          "p_escalation": 0.2697585485863362,
+          "p_z": 0.015454440271956785
+        }
+      }
+    },
+    {
+      "id": "A06",
+      "title": "Intersample attention leakage across rows",
+      "repo": "Historical-context mask forbids attention to later timestamps; windows are chronological.",
+      "evidence_status": "documented-only",
+      "measured": null
+    },
+    {
+      "id": "A07",
+      "title": "Out-of-fold target encoding scheme",
+      "repo": "Expanding-window forward OOF on training rows; full-train statistics for val/test.",
+      "evidence_status": "documented-only",
+      "measured": null
+    },
+    {
+      "id": "A08",
+      "title": "What the 1-D optimal transport calibration is",
+      "repo": "Quantile matching of binned label rates with K knots and min support; isotonic as comparator.",
+      "evidence_status": "demo",
+      "measured": {
+        "ece_test_before_ot": 0.26582317219651536,
+        "ece_test_after_ot": 0.0006795752057613403,
+        "ece_test_isotonic": 0.004819893014622522
+      }
+    },
+    {
+      "id": "A09",
+      "title": "Template search (MCTS with K=64 over 50,000 rows)",
+      "repo": "Hand-written 16-template demo bank plus a small MCTS that appends a few templates.",
+      "evidence_status": "demo",
+      "measured": {
+        "size": 19,
+        "origin": "mcts-discovered"
+      }
+    },
+    {
+      "id": "A10",
+      "title": "Cost matrix units and values",
+      "repo": "Demo cost matrix in configs/demo_costs.yaml; the paper does not state units.",
+      "evidence_status": "demo",
+      "measured": {
+        "cost_matrix": {
+          "c_fp": 1.0,
+          "c_fn": 20.0,
+          "c_review": 2.0,
+          "label": "demo"
+        },
+        "threshold": 0.058
+      }
+    },
+    {
+      "id": "A11",
+      "title": "Upstream substitutes (card key, graph features, FraudGT baseline)",
+      "repo": "Community card key for IEEE-CIS; no graph features; no FraudGT; documented as not implemented.",
+      "evidence_status": "documented-only",
+      "measured": null
+    }
+  ],
+  "long_form": "docs/paper-implementation-audit.md"
+}
